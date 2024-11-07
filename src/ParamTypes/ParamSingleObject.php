@@ -1,6 +1,7 @@
 <?php
 /*
  * This file is part of AtrumUrsus\ValuesAdapter.
+ * https://github.com/atrumursus/values-adapter
  *
  * (c) Vasyl Tochylin <tochylin.vasyl@gmail.com>
  *

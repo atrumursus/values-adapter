@@ -5,7 +5,7 @@ DOXYFILE_ENCODING      = UTF-8
 # Ім'я модуля
 PROJECT_NAME           = "AtrumUrsus\ValuesAdapter"
 # Версія модуля
-PROJECT_NUMBER         = 0.0.1
+# PROJECT_NUMBER         = 0.0.1
 # Опис модуля
 PROJECT_BRIEF          = ""
 #PROJECT_LOGO          =
@@ -40,4 +40,4 @@ CREATE_SUBDIRS         = YES
 ALLOW_UNICODE_NAMES    = YES
 RECURSIVE              = YES
 
-INPUT_FILTER = "php Doxyfilter.php"
+INPUT_FILTER = "php all_filters.php"
