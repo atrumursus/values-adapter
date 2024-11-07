@@ -1,0 +1,43 @@
+# Doxyfile 1.8.13
+
+DOXYFILE_ENCODING      = UTF-8
+
+# Ім'я модуля
+PROJECT_NAME           = "AtrumUrsus\ValuesAdapter"
+# Версія модуля
+PROJECT_NUMBER         = 0.0.1
+# Опис модуля
+PROJECT_BRIEF          = ""
+#PROJECT_LOGO          =
+
+# The default value is: English.
+OUTPUT_LANGUAGE        = Ukrainian
+
+# Де зберігати документацію
+OUTPUT_DIRECTORY       = ./Documentation
+
+#Файли, які документуються
+INPUT  = ../src
+
+# Додати вихідні файли
+EXTRACT_ALL            = YES
+SOURCE_BROWSER         = YES
+INLINE_SOURCES         = YES
+#STRIP_CODE_COMMENTS    = YES
+#REFERENCED_BY_RELATION = YES
+#REFERENCES_RELATION    = YES
+#REFERENCES_LINK_SOURCE = YES
+#SOURCE_TOOLTIPS        = YES
+
+# На титульній сторінці опис з файла README.md
+INPUT += ../README.md
+USE_MDFILE_AS_MAINPAGE = ../README.md
+
+# тільки html
+GENERATE_LATEX         = NO
+
+CREATE_SUBDIRS         = YES
+ALLOW_UNICODE_NAMES    = YES
+RECURSIVE              = YES
+
+INPUT_FILTER = "php Doxyfilter.php"
