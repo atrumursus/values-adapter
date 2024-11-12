@@ -45,10 +45,17 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamArrayString;
 class VString extends AdapterAbstract
 {
 
+	const CASE_UPPER = 'upper';
+	const CASE_LOWER = 'lower';
+	const CASE_TITLE = 'title';
+	const CASE_NULL = null;
+
+	/**
+	 *  @brief construct
+	 */
 	public function __construct()
 	{
 		parent::__construct();
-		$this->case(null);
 	}
 
 	/**
@@ -62,7 +69,7 @@ class VString extends AdapterAbstract
 		$param['min'] = new ParamSingleInt();
 		$param['max'] =	new ParamSingleInt();
 		$param['trim'] = new ParamSingleBool();
-		$param['case'] = new ParamSingleEnum(['upper', 'lower', 'title', 'null', null]);
+		$param['case'] = new ParamSingleEnum([static::CASE_UPPER, static::CASE_LOWER, static::CASE_TITLE, static::CASE_NULL]);
 		$param['withPrefix'] = new ParamSingleString();
 		$param['withoutPrefix'] = new ParamArrayString();
 		$param['withSuffix'] = new ParamSingleString();
@@ -88,12 +95,14 @@ class VString extends AdapterAbstract
 			if ($this->get('trim')) $var = trim($var);
 		}
 
-		$var =	match ($this->get('case')) {
-			'upper' =>  mb_convert_case($var, MB_CASE_UPPER_SIMPLE),
-			'lower'  => mb_convert_case($var, MB_CASE_LOWER_SIMPLE),
-			'title'  =>	mb_convert_case($var,	MB_CASE_TITLE_SIMPLE),
-			default   => $var,
-		};
+		if ($this->isset('case')) {
+			$var =	match ($this->get('case')) {
+				static::CASE_UPPER =>  mb_convert_case($var, MB_CASE_UPPER_SIMPLE),
+				static::CASE_LOWER  => mb_convert_case($var, MB_CASE_LOWER_SIMPLE),
+				static::CASE_TITLE  =>	mb_convert_case($var,	MB_CASE_TITLE_SIMPLE),
+				default   => $var,
+			};
+		}
 
 		if ($this->isset('withoutPrefix')) {
 			$prefixList = $this->get('withoutPrefix');

@@ -40,13 +40,13 @@ class VStringTest extends TestCase
 		$result = (new VString())->case(null)->convert('VaLuE');
 		$this->assertSame('VaLuE', $result);
 
-		$result = (new VString())->case('upper')->convert('VaLuE');
+		$result = (new VString())->case(VString::CASE_UPPER)->convert('VaLuE');
 		$this->assertSame('VALUE', $result);
 
-		$result = (new VString())->case('lower')->convert('VaLuE');
+		$result = (new VString())->case(VString::CASE_LOWER)->convert('VaLuE');
 		$this->assertSame('value', $result);
 
-		$result = (new VString())->case('title')->convert('VaLuE');
+		$result = (new VString())->case(VString::CASE_TITLE)->convert('VaLuE');
 		$this->assertSame('Value', $result);
 
 	}
