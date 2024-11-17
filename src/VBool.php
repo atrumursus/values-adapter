@@ -33,6 +33,16 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleMixed;
  *   - boolval - apply the boolval() function to the input value
  *               | застосувати функцію boolval() до вхідного значення
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self asTrue(... string $stringAsTrue)
+ * @method self asFalse(... string $stringAsFalse)
+ * @method self true(mixed $returnAsTrue)
+ * @method self false(mixed $returnAsFalse)
+ * @method self boolval(bool $isCall)
+ *
  */
 class VBool extends AdapterAbstract
 {

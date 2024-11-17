@@ -25,6 +25,13 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleInt;
  *  - max - max value
  *          | Максимальне значення
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self min(integer $min)
+ * @method self max(integer $max)
+ *
  */
 class VInt extends AdapterAbstract
 {

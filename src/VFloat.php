@@ -28,6 +28,14 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleFloat;
  *  - toFixed - rounds the string to a specified number of decimals.
  *          | форматує число з вказаною кількість цифр після крапки.
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self min(float $min)
+ * @method self max(float $max)
+ * @method self toFixed(integer $countDecimals)
+ *
  */
 class VFloat extends AdapterAbstract
 {

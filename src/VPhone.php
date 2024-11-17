@@ -45,7 +45,16 @@ use libphonenumber\geocoding\PhoneNumberOfflineGeocoder;
  * use library:
  *  @link https://github.com/giggsey/libphonenumber-for-php?tab=readme-ov-file
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self country(string $alpha2)
+ * @method self locale(string $languageCode)
+ * @method self output(string $outputType)
+ *
  */
+
 class VPhone extends VString
 {
 	const OUTPUT_E164 = 'E164';

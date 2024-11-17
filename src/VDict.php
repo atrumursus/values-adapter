@@ -24,6 +24,13 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleCallable;
  *  - postConvert -  function convert output value after conversion according to map
  *                | функція  перетворення вихідного значення після  перетворення згідно мапі
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self preConvert(callable $func)
+ * @method self postConvert(callable $func)
+ *
  */
 class VDict extends VDictAbstract
 {

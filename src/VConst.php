@@ -23,6 +23,12 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleMixed;
  *   - value - value of the result
  *             | значення результату
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self value(mixed $val)
+ *
  */
 class VConst extends AdapterAbstract
 {

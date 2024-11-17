@@ -27,7 +27,16 @@ use AtrumUrsus\ValuesAdapter\Exception\ExceptionValue;
  *              | якщо встановлено - результатом конвертації буде  строка в вказаному форматі
  *               @see /DateTime::format()
  *  - tz        - string TimeZone
- *               @see https://www.php.net/manual/ru/timezones.php
+ *               @see https://www.php.net/manual/en/timezones.php
+ *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self inFormat(string $datetimeFormat)
+ * @method self outFormat(string $datetimeFormat)
+ * @method self tz(string $timeZone)
+ *
  */
 class VDateTime extends AdapterAbstract
 {
@@ -90,7 +99,7 @@ class VDateTime extends AdapterAbstract
 		}
 
 		if ($var instanceof \DateTimeInterface) {
-			$var=\DateTime::createFromInterface($var);
+			$var = \DateTime::createFromInterface($var);
 			if (!empty($timezone)) {
 				($var)->setTimezone($timezone);
 			}

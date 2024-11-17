@@ -28,6 +28,13 @@ use AtrumUrsus\ValuesAdapter\Util\UtilDict;
  *  - item -  an array of transformation map elements
  *        | масив елементів мапи перетворення
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self src(... string $itemPath)
+ * @method self item(... VDictItem $item)
+ *
  */
 abstract class VDictAbstract extends AdapterAbstract
 {

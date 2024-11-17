@@ -41,6 +41,19 @@ use AtrumUrsus\ValuesAdapter\ParamTypes\ParamArrayString;
  *  - withoutSuffix - if there is, it removes the specified suffix
  *                    | якщо є - то видаляє вказаний суфікс
  *
+ * @method self default( mixed $var )
+ * @method self valid(... mixed $var)
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self min(integer $minStrLen)
+ * @method self max(integer $maxStrLen)
+ * @method self trim(boolean $isTrim)
+ * @method self case(null|string $caseType)
+ * @method self withPrefix(string $prefix)
+ * @method self withoutPrefix(string $prefix)
+ * @method self withSuffix(string $suffix)
+ * @method self withoutSuffix(integer $suffix)
+ *
  */
 class VString extends AdapterAbstract
 {

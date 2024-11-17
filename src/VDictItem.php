@@ -16,10 +16,10 @@ namespace AtrumUrsus\ValuesAdapter;
 use AtrumUrsus\ValuesAdapter\AdapterAbstract;
 use AtrumUrsus\ValuesAdapter\Exception\ExceptionParam;
 use AtrumUrsus\ValuesAdapter\Exception\ExceptionValue;
-use AtrumUrsus\ValuesAdapter\ParamTypes\ParamArrayMixed;
 use AtrumUrsus\ValuesAdapter\ParamTypes\ParamArrayString;
 use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleBool;
 use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleCallable;
+use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleMixed;
 use AtrumUrsus\ValuesAdapter\ParamTypes\ParamSingleObject;
 use AtrumUrsus\ValuesAdapter\Util\UtilDict;
 
@@ -47,6 +47,14 @@ use AtrumUrsus\ValuesAdapter\Util\UtilDict;
  *   - adapter - adapter object to convert the value to (defaults to null)
  *               | об'єкт адаптеру для перетворення значення (за умовчанням - null)
  *
+ * @method self eMessage( string $msg)
+ * @method self next( AdapterAbstract $adapter)
+ * @method self src(... string $itemPath)
+ * @method self required(bool $isRequired)
+ * @method self extractor(callable $func)
+ * @method self option(mixed $val)
+ * @method self adapter(AdapterAbstract $adapter)
+ *
  */
 class VDictItem extends AdapterAbstract
 {
@@ -73,7 +81,7 @@ class VDictItem extends AdapterAbstract
 		$param = parent::params();
 		$param['src'] = new ParamArrayString();
 		$param['required'] = new ParamSingleBool();
-		$param['option'] = new ParamArrayMixed();
+		$param['option'] = new ParamSingleMixed();
 		$param['extractor'] = new ParamSingleCallable();
 		$param['adapter'] = new ParamSingleObject(AdapterAbstract::class);
 		unset($param['default']);
