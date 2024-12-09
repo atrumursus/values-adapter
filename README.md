@@ -17,8 +17,9 @@ The library allows you to verify and convert variables of various types. It can 
 ```
 
 ## Sample 2 :
+Input Data:
 ```
-input_data = [
+[
 	'employee' => [
 		'name' => '  JAMES',
 		'lastname' => '   BOnd   ',
@@ -58,7 +59,7 @@ $adapter = (new VDict())
 ```
 Convert:
 ```
-$result = $adapter->convert($this->inputValue1);
+$result = $adapter->convert($input);
 ```
 
 Result:

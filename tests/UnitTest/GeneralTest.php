@@ -76,6 +76,21 @@ class GeneralTest extends TestCase
 		$this->assertSame('inValid', $result);
 	}
 
+	public function testSuccess5(): void
+	{
+		$resultOk = ($this->adapter)->ok('value');
+		$this->assertSame(true, $resultOk);
+	}
+
+
+	public function testSuccess6(): void
+	{
+		$result = null;
+		$resultOk = ($this->adapter)->ok('value', $result);
+		$this->assertSame('value', $result);
+		$this->assertSame(true, $resultOk);
+	}
+
 
 	/**
 	 * @test

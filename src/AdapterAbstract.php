@@ -208,12 +208,13 @@ abstract class AdapterAbstract
 	 * @brief Returns the result of the value's validity (true|false)
 	 *
 	 * @param mixed $var
-	 * @return bool
+	 * @param mixed $result
+	 * @return boolean
 	 */
-	public function validate(mixed $var): bool
+	public function validate(mixed $var, mixed &$result=null): bool
 	{
 		try {
-			$this->convert($var);
+			$result=$this->convert($var);
 			return true;
 		} catch (ExceptionValue) {
 			return false;
@@ -224,10 +225,11 @@ abstract class AdapterAbstract
 	 * Synonym of method $this->validate()
 	 *
 	 * @param mixed $var
+	 * @param mixed $result
 	 * @return bool
 	 */
-	public function ok(mixed $var): bool
+	public function ok(mixed $var, mixed &$result = null): bool
 	{
-		return $this->validate($var);
+		return $this->validate($var, $result);
 	}
 }
