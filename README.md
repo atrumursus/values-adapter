@@ -2,6 +2,12 @@
 
 The library allows you to verify and convert variables of various types. It can be useful for working with data in REST requests, or when analyzing data coming from outside.
 
+## Install
+```
+composer require atrumursus/values-adapter
+```
+
+
 ## Sample 1 :
 ```
 (new VInt())->min(1)->max(11)->convert('10')
