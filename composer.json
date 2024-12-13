@@ -1,7 +1,6 @@
 {
 	"name": "atrumursus/values-adapter",
 	"description": "php values adapter",
-	"version": "0.0.1",
 	"type": "library",
 	"license": "MIT",
 	"autoload": {
